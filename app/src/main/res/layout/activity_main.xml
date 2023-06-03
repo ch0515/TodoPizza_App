@@ -11,11 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="2023년 06월 3일"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textColor="@color/black"
         android:gravity="center"/>
     <CalendarView android:id="@+id/cal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="300dp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/pizzaformat"/>
 
 </LinearLayout>
