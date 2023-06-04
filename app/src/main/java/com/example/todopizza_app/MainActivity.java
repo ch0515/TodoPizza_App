@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -24,7 +25,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     TextView today;
-    Button btn;
+    Button targetbtn, CalMove;
     LinearLayout TargetAdd;
 
     @Override
@@ -35,12 +36,13 @@ public class MainActivity extends AppCompatActivity {
         actionBar.hide();
 
         today = findViewById(R.id.today);
-        btn = findViewById(R.id.targetbtn);
+        targetbtn = findViewById(R.id.targetbtn);
         TargetAdd = findViewById(R.id.TargetAdd);
+        CalMove = findViewById(R.id.CalMove);
 
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        targetbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LayoutInflater inflater = (LayoutInflater)
@@ -48,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 inflater.inflate(R.layout.todo_target, TargetAdd, true);
             }
         });
+        CalMove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), calender.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

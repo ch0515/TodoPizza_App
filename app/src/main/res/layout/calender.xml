@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,36 +13,20 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:src="@drawable/todopizza" />
-
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
-        <Button android:id="@+id/CalMove"
+        <Button android:id="@+id/PizzaMove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:backgroundTint="@color/black"
-            android:text="캘린더"/>
+            android:text="피자"/>
     </LinearLayout>
-
-    <TextView android:id="@+id/today"
+    <CalendarView android:id="@+id/cal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2023년 06월 3일"
-        android:textSize="25dp"
-        android:textColor="@color/black"
-        android:gravity="center"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/pizzaformat"/>
-    <Button android:id="@+id/targetbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="목표 추가"
-        android:layout_marginLeft="20dp"
-        android:backgroundTint="@color/black"/>
+        android:layout_height="300dp" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -55,4 +36,5 @@
         android:orientation="vertical">
     </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
