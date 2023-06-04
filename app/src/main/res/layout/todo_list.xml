@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/TargetList"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
-    android:paddingLeft="4dp"
-    android:paddingTop="8dp"
-    android:paddingRight="4dp"
-    android:paddingBottom="4dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="5dp"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/layoutTodo"
@@ -30,23 +20,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="목표 수정"
+            android:text="리스트 수정"
             android:background="@null"/>
-
         <Button
             android:id="@+id/ListAddButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="+"
-            android:layout_weight="0.2"
-            app:backgroundTint="@android:color/holo_orange_light" />
+            android:text="삭제"
+            android:layout_weight="0.4"
+            app:backgroundTint="@color/teal_700" />
     </LinearLayout>
-    <LinearLayout android:id="@+id/listAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+</LinearLayout>

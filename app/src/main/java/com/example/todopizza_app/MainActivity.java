@@ -25,9 +25,8 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     TextView today;
-    Button targetbtn, CalMove;
+    Button targetbtn, CalMove, listaddbtn;
     LinearLayout TargetAdd;
-    TextView TargetText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
         TargetAdd = findViewById(R.id.TargetAdd);
         CalMove = findViewById(R.id.CalMove);
 
-
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat mFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+        String time = mFormat.format(date);
+        today.setText(time);
 
         targetbtn.setOnClickListener(new View.OnClickListener() {
             @Override
