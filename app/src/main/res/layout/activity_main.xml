@@ -7,6 +7,28 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:src="@drawable/todopizza" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/black"
+            android:text="캘린더"/>
+    </LinearLayout>
+
     <TextView android:id="@+id/today"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,12 +36,23 @@
         android:textSize="25dp"
         android:textColor="@color/black"
         android:gravity="center"/>
-    <CalendarView android:id="@+id/cal"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:src="@drawable/pizzaformat"/>
-
+    <Button android:id="@+id/targetbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="목표 추가"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/black"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout android:id="@+id/TargetAdd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

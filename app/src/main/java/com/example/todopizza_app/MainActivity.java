@@ -4,9 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -15,8 +22,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    CalendarView cal;
+
     TextView today;
+    Button btn;
+    LinearLayout TargetAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +33,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        cal = findViewById(R.id.cal);
+
         today = findViewById(R.id.today);
+        btn = findViewById(R.id.targetbtn);
+        TargetAdd = findViewById(R.id.TargetAdd);
 
-        DateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일");
-        Date date = new Date(cal.getDate());
-        today.setText(formatter.format(date));
 
-        cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int monthofday) {
-                String day;
-                day = year + "년" + (month+1) + "월" +monthofday + "일";
-                today.setText(day);
+            public void onClick(View view) {
+                LayoutInflater inflater = (LayoutInflater)
+                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                inflater.inflate(R.layout.todo_target, TargetAdd, true);
             }
         });
+
     }
+
 }
