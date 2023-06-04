@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     TextView today;
     Button targetbtn, CalMove;
     LinearLayout TargetAdd;
+    TextView TargetText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
