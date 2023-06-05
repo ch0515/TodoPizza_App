@@ -42,11 +42,11 @@
             android:text="+"
             android:layout_weight="0.2"
             app:backgroundTint="@android:color/holo_orange_light" />
+
     </LinearLayout>
     <LinearLayout android:id="@+id/listAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
     </LinearLayout>
 </androidx.cardview.widget.CardView>
