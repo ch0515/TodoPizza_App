@@ -22,6 +22,7 @@ public class todo_target extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.todo_target);
         ListAddButton = findViewById(R.id.ListAddButton);
+        Addlist = findViewById(R.id.Addlist);
 
         ListAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
