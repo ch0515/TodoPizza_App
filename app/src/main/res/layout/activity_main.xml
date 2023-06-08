@@ -50,16 +50,55 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-<!--    <LinearLayout android:id="@+id/TargetAdd"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical">-->
-<!--    </LinearLayout>-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
+    <LinearLayout android:id="@+id/TargetAdd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView android:id="@+id/Addtarget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="8dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+            <LinearLayout
+                android:id="@+id/layoutTodo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Spinner android:layout_gravity="left"
+                    android:id="@+id/spinner_main_fruits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown">
+                </Spinner>
+                <EditText android:id="@+id/targetText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="목표 수정"
+                    android:background="@null"
+                    android:singleLine="true"/>
+                <Button
+                    android:id="@+id/ListAddButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="+"
+                    android:layout_weight="0.2"
+                    app:backgroundTint="@android:color/holo_orange_light" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

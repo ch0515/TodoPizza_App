@@ -45,7 +45,7 @@ public class CustomSpinnerAdapter extends ArrayAdapter<String> {
             convertView = mInflater.inflate(R.layout.spinner_row, parent, false);
 
             mViewHolder.mImage = (ImageView) convertView.findViewById(R.id.imageview_spinner_image);
-            mViewHolder.mName = (TextView) convertView.findViewById(androidx.core.R.id.text);
+            mViewHolder.mName = (TextView) convertView.findViewById(R.id.textview_spinner_name);
             convertView.setTag(mViewHolder);
         }else{
             mViewHolder = (ViewHolder) convertView.getTag();
