@@ -25,9 +25,9 @@
             android:orientation="horizontal">
 
             <Spinner android:layout_gravity="left"
-                android:id="@+id/pizzaspin"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:id="@+id/spinner_main_fruits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:spinnerMode="dropdown">
             </Spinner>
             <EditText android:id="@+id/targetText"
@@ -35,7 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="목표 수정"
-                android:background="@null"/>
+                android:background="@null"
+                android:singleLine="true"/>
             <Button
                 android:id="@+id/ListAddButton"
                 android:layout_width="0dp"
@@ -60,6 +61,7 @@
                 android:layout_gravity="left"></CheckBox>
 
             <EditText
+                android:singleLine="true"
                 android:id="@+id/listText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
