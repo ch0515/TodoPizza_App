@@ -27,7 +27,8 @@
             <Spinner android:layout_gravity="left"
                 android:id="@+id/pizzaspin"
                 android:layout_width="40dp"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                android:spinnerMode="dropdown">
             </Spinner>
             <EditText android:id="@+id/targetText"
                 android:layout_width="0dp"

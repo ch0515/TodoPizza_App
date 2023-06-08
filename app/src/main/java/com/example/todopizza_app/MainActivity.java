@@ -25,7 +25,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     TextView today;
-    Button targetbtn, CalMove, listaddbtn;
+    Button targetbtn, CalMove;
     LinearLayout TargetAdd;
 
     @Override

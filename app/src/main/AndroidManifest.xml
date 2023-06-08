@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".calender"></activity>
         <activity android:name=".todo_target"></activity>
+        <activity android:name=".todo_list"></activity>
     </application>
 
 </manifest>
