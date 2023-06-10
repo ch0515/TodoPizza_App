@@ -30,9 +30,12 @@
                 android:id="@+id/spinner_main_fruits"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dropdown">
+                android:spinnerMode="dropdown"
+                android:background="@null">
             </Spinner>
-            <EditText android:id="@+id/targetText"
+            <EditText
+                android:layout_marginLeft="4dp"
+                android:id="@+id/targetText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,8 +60,4 @@
 
         </LinearLayout>
     </LinearLayout>
-
-
-
-
 </androidx.cardview.widget.CardView>

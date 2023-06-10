@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     int selected_fruit_idx = 0;
     int test = 0;
     int number = 0;
+    int chenum = 0;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
@@ -63,6 +64,43 @@ public class MainActivity extends AppCompatActivity {
                 Button ListAddButton = view.findViewById(R.id.ListAddButton);
                 TargetAdd.addView(view);
 
+
+                spinner_fruits = view.findViewById(R.id.spinner_main_fruits);
+
+                spinnerImages = new int[]{
+                        R.drawable.gpimento,
+                        R.drawable.ham,
+                        R.drawable.mushroom,
+                        R.drawable.olive,
+                        R.drawable.onion,
+                        R.drawable.rpimento,
+                        R.drawable.tomato
+                };
+                spinnerNames = new String[]{
+                        "초록피망",
+                        "햄",
+                        "버섯",
+                        "올리브",
+                        "양파",
+                        "빨강피망",
+                        "토마토"
+                };
+                CustomSpinnerAdapter customSpinnerAdapter = new CustomSpinnerAdapter(MainActivity.this, spinnerNames, spinnerImages);
+                spinner_fruits.setAdapter(customSpinnerAdapter);
+
+                spinner_fruits.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        selected_fruit_idx = spinner_fruits.getSelectedItemPosition();
+                        Toast.makeText(MainActivity.this, spinnerNames[selected_fruit_idx], Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
                 LinearLayout listContainer = view.findViewById(R.id.list);
                 ListAddButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -71,12 +109,13 @@ public class MainActivity extends AppCompatActivity {
                         View listChild = LayoutInflater.from(MainActivity.this).inflate(R.layout.todo_list, null, false);
                         listContainer.addView(listChild);
                         Button listdele = listChild.findViewById(R.id.listdele);
-
+                        chenum ++;
+                        Toast.makeText(MainActivity.this, chenum+"", Toast.LENGTH_SHORT).show();
                         listdele.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 listContainer.removeView(listChild);
-                                number = number -1;
+                                chenum --;
                             }
                         });
                     }
@@ -90,74 +129,20 @@ public class MainActivity extends AppCompatActivity {
         TargetAdd = findViewById(R.id.TargetAdd);
 
 
-        long now = System.currentTimeMillis();
+        long now = System.currentTimeMillis(); //오늘 날짜 가져오는 화면
         Date date = new Date(now);
         SimpleDateFormat mFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
         String time = mFormat.format(date);
-        today.setText(time);
-/*
-        targetbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                LayoutInflater inflater = (LayoutInflater)
-//                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//                inflater.inflate(R.layout.todo_target, TargetAdd, true);
-                Addtarget.setVisibility(View.VISIBLE);
-            }
-        });
+        today.setText(time); //오늘 날짜 가져오는 화면 끝
+
         CalMove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), calender.class);
                 startActivity(intent);
-                finish();
+                finish(); //캘린더로 넘어가는 화면
             }
         });
-
-        spinner_fruits = (Spinner)findViewById(R.id.spinner_main_fruits);
-
-        spinnerNames = new String[]{
-                "초록피망",
-                "햄",
-                "버섯",
-                "올리브",
-                "양파",
-                "빨강피망",
-                "토마토"
-        };
-        spinnerImages = new int[]{
-                R.drawable.gpimento,
-                R.drawable.ham,
-                R.drawable.mushroom,
-                R.drawable.olive,
-                R.drawable.onion,
-                R.drawable.rpimento,
-                R.drawable.tomato
-        };
-        CustomSpinnerAdapter customSpinnerAdapter = new CustomSpinnerAdapter(MainActivity.this, spinnerNames, spinnerImages);
-        spinner_fruits.setAdapter(customSpinnerAdapter);
-
-        spinner_fruits.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selected_fruit_idx = spinner_fruits.getSelectedItemPosition();
-                Toast.makeText(MainActivity.this, spinnerNames[selected_fruit_idx], Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        ListAddButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LayoutInflater inflater = (LayoutInflater)
-                        getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                inflater.inflate(R.layout.todo_list, TargetAdd, true);
-            }
-        });*/
     }
 
 }
