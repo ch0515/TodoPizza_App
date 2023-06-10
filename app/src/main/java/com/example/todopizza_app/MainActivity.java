@@ -10,8 +10,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -30,7 +32,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     TextView today;
-    Button targetbtn, CalMove, ListAddButton;
+    Button targetbtn, CalMove;
     LinearLayout TargetAdd;
 
     CardView Addtarget;
@@ -38,19 +40,53 @@ public class MainActivity extends AppCompatActivity {
     String[] spinnerNames;
     int[] spinnerImages;
     int selected_fruit_idx = 0;
-    @SuppressLint("WrongViewCast")
+    int test = 0;
+    int number = 0;
+
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        targetbtn = findViewById(R.id.targetbtn);
+
+        TargetAdd = findViewById(R.id.TargetAdd);
+
+        targetbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup view = (ViewGroup) LayoutInflater.from(MainActivity.this).inflate(R.layout.todo_target, null, false);
+                Button ListAddButton = view.findViewById(R.id.ListAddButton);
+                TargetAdd.addView(view);
+
+                LinearLayout listContainer = view.findViewById(R.id.list);
+                ListAddButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.d("mytag", "click list add button");
+                        View listChild = LayoutInflater.from(MainActivity.this).inflate(R.layout.todo_list, null, false);
+                        listContainer.addView(listChild);
+                        Button listdele = listChild.findViewById(R.id.listdele);
+
+                        listdele.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                listContainer.removeView(listChild);
+                                number = number -1;
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
         today = findViewById(R.id.today);
         targetbtn = findViewById(R.id.targetbtn);
         CalMove = findViewById(R.id.CalMove);
-        Addtarget = findViewById(R.id.Addtarget);
-        ListAddButton = findViewById(R.id.ListAddButton);
         TargetAdd = findViewById(R.id.TargetAdd);
 
 
@@ -59,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat mFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
         String time = mFormat.format(date);
         today.setText(time);
-
+/*
         targetbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                         getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 inflater.inflate(R.layout.todo_list, TargetAdd, true);
             }
-        });
+        });*/
     }
 
 }

@@ -10,13 +10,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="10dp">
-
         <CheckBox
             android:id="@+id/listBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"></CheckBox>
-
         <EditText
             android:id="@+id/listText"
             android:layout_width="0dp"
@@ -24,8 +22,8 @@
             android:layout_weight="1"
             android:background="@null"
             android:text="리스트 수정"
-            android:textSize="15dp"/>
-
+            android:textSize="15dp"
+            android:singleLine="true"/>
         <Button
             android:id="@+id/listdele"
             android:layout_width="0dp"
