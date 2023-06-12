@@ -35,10 +35,63 @@
         android:textSize="25dp"
         android:textColor="@color/black"
         android:gravity="center"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:src="@drawable/pizzaformat"/>
+
+        <ImageView android:id="@+id/gpimentoToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gpimentotoppings"
+            android:visibility="invisible"/>
+
+        <ImageView android:id="@+id/hamToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hamtoppings"
+            android:visibility="invisible"/>
+
+        <ImageView android:id="@+id/mushroomToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mushroomtoppings"
+            android:visibility="invisible"/>
+
+        <ImageView android:id="@+id/oliveToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/olivetoppings"
+            android:visibility="invisible"/>
+
+        <ImageView android:id="@+id/onionToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oniontoppings"
+            android:visibility="invisible"/>
+
+        <ImageView android:id="@+id/rpimentoToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rpimentotoppings"
+            android:visibility="invisible"/>
+
+        <ImageView android:id="@+id/tomatoToppings"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tomatotoppings"
+            android:visibility="invisible"/>
+    </FrameLayout>
     <Button android:id="@+id/targetbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
