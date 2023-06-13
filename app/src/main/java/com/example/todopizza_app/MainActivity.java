@@ -195,10 +195,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void revalidatePizzaToppings() {
-        String name = String.valueOf(spinnerNames);
+        String name = spinnerNames[selected_fruit_idx];
         Log.d("mytag",""+name);
        // Log.d("mytag", "revalidatePizzaToppings");
-        Log.d("mytag",selected_fruit_idx+"");
+        Log.d("mytag1",selected_fruit_idx+"");
         LinearLayout listContainer = findViewById(R.id.TargetAdd);
         // Log.d("mytag", listContainer.getChildCount() + "");
         for (int i = 0; i < listContainer.getChildCount(); i++) {
@@ -210,13 +210,15 @@ public class MainActivity extends AppCompatActivity {
             // Log.d("mytag", spinner.getSelectedItem().toString());
             LinearLayout list = (LinearLayout) targetList.findViewById(R.id.list);
             int totalCount = list.getChildCount();
-            Log.d("mytag", list.getChildCount() + "");
+            Log.d("mytag2", list.getChildCount() + "");
             int checkCount = 0;
             for (int j = 0; j < list.getChildCount(); j++) {
                 CheckBox box = list.findViewById(R.id.listBox); //체크박스
-                Log.d("mytag", box.isChecked() + "");
+                Log.d("mytag3", box.isChecked() + "");
                 if (box.isChecked() == true) checkCount++; //체크박스 체크 여부 개수랑 totalCount비교
             }
+            Log.d("chenum value",""+chenum);
+            Log.d("checkCount value",""+checkCount);
 
             if (chenum == checkCount) {
                 String spinnerName = spinnerNames[selected_fruit_idx];
