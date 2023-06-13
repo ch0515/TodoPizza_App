@@ -112,10 +112,11 @@ public class MainActivity extends AppCompatActivity {
                 spinner_fruits.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        //selected_fruit_idx = spinner_fruits.getSelectedItemPosition();
                         selected_fruit_idx = spinner_fruits.getSelectedItemPosition();
                         //Toast.makeText(MainActivity.this, spinnerNames[selected_fruit_idx], Toast.LENGTH_LONG).show();
+                        revalidatePizzaToppings();
                     }
-
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
 
@@ -194,14 +195,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void revalidatePizzaToppings() {
-        // Log.d("mytag", "revalidatePizzaToppings");
+        String name = String.valueOf(spinnerNames);
+        Log.d("mytag",""+name);
+       // Log.d("mytag", "revalidatePizzaToppings");
+        Log.d("mytag",selected_fruit_idx+"");
         LinearLayout listContainer = findViewById(R.id.TargetAdd);
         // Log.d("mytag", listContainer.getChildCount() + "");
         for (int i = 0; i < listContainer.getChildCount(); i++) {
             CardView targetList = (CardView) listContainer.getChildAt(i);
             Spinner spinner = targetList.findViewById(R.id.spinner_main_fruits);
-            // Drawable d = ((ImageView) ((ViewGroup) spinner.getChildAt(0)).getChildAt(0)).getDrawable();
-            // Log.d("mytag", d.toString());
+             Drawable d = ((ImageView) ((ViewGroup) spinner.getChildAt(0)).getChildAt(0)).getDrawable();
+            //Log.d("mytag", d.toString());
             // Log.d("mytag", spinner.toString());
             // Log.d("mytag", spinner.getSelectedItem().toString());
             LinearLayout list = (LinearLayout) targetList.findViewById(R.id.list);
