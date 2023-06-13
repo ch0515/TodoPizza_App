@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -180,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date(now);
         SimpleDateFormat mFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
         String time = mFormat.format(date);
-        today.setText(time); //
+        today.setText(time);
 
         CalMove.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,10 +194,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void revalidatePizzaToppings() {
+        // Log.d("mytag", "revalidatePizzaToppings");
         LinearLayout listContainer = findViewById(R.id.TargetAdd);
         // Log.d("mytag", listContainer.getChildCount() + "");
         for (int i = 0; i < listContainer.getChildCount(); i++) {
             CardView targetList = (CardView) listContainer.getChildAt(i);
+            Spinner spinner = targetList.findViewById(R.id.spinner_main_fruits);
+            // Drawable d = ((ImageView) ((ViewGroup) spinner.getChildAt(0)).getChildAt(0)).getDrawable();
+            // Log.d("mytag", d.toString());
+            // Log.d("mytag", spinner.toString());
+            // Log.d("mytag", spinner.getSelectedItem().toString());
             LinearLayout list = (LinearLayout) targetList.findViewById(R.id.list);
             int totalCount = list.getChildCount();
             Log.d("mytag", list.getChildCount() + "");

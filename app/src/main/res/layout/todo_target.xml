@@ -26,8 +26,9 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Spinner android:layout_gravity="left"
+            <Spinner
                 android:id="@+id/spinner_main_fruits"
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:spinnerMode="dropdown"
