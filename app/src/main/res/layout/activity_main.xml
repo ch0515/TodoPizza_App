@@ -20,12 +20,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
-        <Button android:id="@+id/CalMove"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:backgroundTint="@color/black"
-            android:text="캘린더"/>
     </LinearLayout>
 
     <TextView android:id="@+id/today"
@@ -92,12 +86,12 @@
             android:src="@drawable/tomatotoppings"
             android:visibility="invisible"/>
     </FrameLayout>
-    <Button android:id="@+id/targetbtn"
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/targetbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="목표 추가"
         android:layout_marginLeft="20dp"
-        android:backgroundTint="@color/black"/>
+        android:background="@drawable/target_button_custom"/>
 
     <ScrollView
         android:layout_width="match_parent"
